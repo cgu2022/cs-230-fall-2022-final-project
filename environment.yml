@@ -453,4 +453,5 @@ dependencies:
     - pyarrow==10.0.0
     - responses==0.18.0
     - xxhash==3.1.0
-prefix: /Users/nantanick/miniconda3/envs/cs230
+prefix: /Users/serenazhang/opt/anaconda3/envs/cs230
+
