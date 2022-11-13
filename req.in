@@ -1,0 +1,8 @@
+pandas
+pyarrow
+datasets
+torch
+torchaudio
+fastparquet
+librosa
+jupyter
