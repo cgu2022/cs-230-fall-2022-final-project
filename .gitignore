@@ -131,3 +131,5 @@ dmypy.json
 
 valid_data/
 coughvid/
+*.pth
+*.csv
