@@ -6,3 +6,7 @@ torchaudio
 fastparquet
 librosa
 jupyter
+torch-audiomentations
+ipykernel
+black
+numpy

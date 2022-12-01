@@ -133,3 +133,5 @@ valid_data/
 coughvid/
 *.pth
 *.csv
+
+*.gzip
