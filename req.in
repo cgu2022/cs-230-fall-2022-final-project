@@ -10,3 +10,4 @@ torch-audiomentations
 ipykernel
 black
 numpy
+matplotlib
