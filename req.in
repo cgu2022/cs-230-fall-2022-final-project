@@ -12,3 +12,5 @@ black
 numpy
 matplotlib
 audiomentations
+tensorboard
+matplotlib
