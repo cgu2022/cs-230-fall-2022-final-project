@@ -36,7 +36,7 @@ import pandas as pd
 #load metadata_compiled.csv
 df = pd.read_csv('/Users/serenazhang/Documents/cs230/coughvid_20211012/metadata_compiled.csv', header=0)
 #remove rows with cough_detected < .8
-df = df[df['cough_detected'] >= .8]
+df = df[df['cough_detected'] >= .98]
 #print('cough_detected removed: ', df)
 #remove rows where status == NaN
 df = df[df['status'].notna()]
