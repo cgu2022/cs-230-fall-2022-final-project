@@ -133,6 +133,9 @@ dmypy.json
 
 valid_data/
 coughvid/
+balanced_segmented_data/
+balanced_segmented_data.zip
+
 *.pth
 *.csv
 
