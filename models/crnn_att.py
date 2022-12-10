@@ -132,8 +132,16 @@ class CRNN_with_Attention(torch.nn.Module):
         )  # 128 channels * 8 height of each channel = 1024
 
         # LSTM Section - Preparing for the LSTM
-        self.h_0 = nn.Parameter(torch.zeros(self.num_layers * 2, self.batch_size, self.hidden_size)).to(self.device) #hidden state
-        self.c_0 = nn.Parameter(torch.zeros(self.num_layers * 2, self.batch_size, self.hidden_size)).to(self.device) #internal state
+        self.h_0 = nn.Parameter(
+            torch.zeros(self.num_layers * 2, self.batch_size, self.hidden_size)
+        ).to(
+            self.device
+        )  # hidden state
+        self.c_0 = nn.Parameter(
+            torch.zeros(self.num_layers * 2, self.batch_size, self.hidden_size)
+        ).to(
+            self.device
+        )  # internal state
 
         # LSTM
         LSTM_output, (hn, cn) = self.LSTM_model(
