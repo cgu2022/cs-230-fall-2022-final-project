@@ -3,7 +3,7 @@ from torch import nn
 
 
 class CRNN(torch.nn.Module):
-    def __init__(self, batch_size=16, drop_p=0.0):
+    def __init__(self, batch_size=16, drop_p=0.0, device="cpu"):
         super().__init__()
         channels = [1, 16, 32, 64, 128]
         # hidden_state = [2]
@@ -15,6 +15,7 @@ class CRNN(torch.nn.Module):
         self.source_sequence_length = 31
         self.target_sequence_length = 1
         self.batch_size = batch_size
+        self.device = device
 
         self.conv1 = nn.Sequential(
             nn.Conv2d(
@@ -109,10 +110,14 @@ class CRNN(torch.nn.Module):
 
         # LSTM Section - Preparing for the LSTM
         self.h_0 = nn.Parameter(
-            torch.zeros(self.num_layers * 2, self.batch_size, self.hidden_size)
+            torch.zeros(self.num_layers * 2, self.batch_size, self.hidden_size).to(
+                self.device
+            )
         )  # hidden state
         self.c_0 = nn.Parameter(
-            torch.zeros(self.num_layers * 2, self.batch_size, self.hidden_size)
+            torch.zeros(self.num_layers * 2, self.batch_size, self.hidden_size).to(
+                self.device
+            )
         )  # internal state
 
         # LSTM

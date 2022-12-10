@@ -253,9 +253,9 @@ def get_model(name, dropout, batch_size):
     elif name == "cnn_large":
         return CNN_Large(drop_p=dropout)
     elif name == "crnn":
-        return CRNN(drop_p=dropout, batch_size=batch_size)
+        return CRNN(drop_p=dropout, batch_size=batch_size, device=DEVICE)
     elif name == "crnna":
-        return CRNN_with_Attention(drop_p=dropout, batch_size=batch_size)
+        return CRNN_with_Attention(drop_p=dropout, batch_size=batch_size, device=DEVICE)
     else:
         raise ValueError("Model type not recognized")
 
