@@ -93,10 +93,7 @@ def train_single_epoch(model, train_data_loader, val_data_loader, loss_fn, optim
         
         
     print(f"Training loss: {total_loss_train}, Training accuracy : {correct_pred_train/total_pred_train}")
-    #print normalized loss
     print(f"Training loss normalized: {total_loss_train/len(train_data_loader)}")
-    # print f1 score, precision, recall
-    # print(classification_report(torch.cat(train_trues).detach().cpu().numpy(), torch.argmax(torch.cat(train_preds), axis=1).detach().cpu().numpy()))
     
     total_loss_val = 0.0
     correct_pred_val = 0.0
@@ -124,12 +121,8 @@ def train_single_epoch(model, train_data_loader, val_data_loader, loss_fn, optim
         total_pred_val += y_batch.shape[0]
         
     print(f"Validataion loss: {total_loss_val}, Validation accuracy : {correct_pred_val/total_pred_val}")
-    #print normalized loss
     print(f"Validation loss normalized: {total_loss_val/len(val_data_loader)}")
-    #print f1 score, confusion matrix and precision, recall using sklearn and true and predicted values
-    # print(classification_report(torch.cat(val_trues).detach().cpu().numpy(), torch.argmax(torch.cat(val_preds), axis=1).detach().cpu().numpy()))
     return total_loss_train/len(train_data_loader), correct_pred_train/total_pred_train, total_loss_val/len(val_data_loader), correct_pred_val/total_pred_val
-
 
     
 def train(model, train_data_loader, val_data_loader, loss_fn, optimiser, device, epochs, do_augment, WRITER_PATH, MODEL_FOLDER):
@@ -173,7 +166,6 @@ def evaluate(model, eval_data_loader, loss_fn, device):
             total_loss += loss.item()
 
     print(f"Evaluation loss: {total_loss}, Evaluation accuracy : {correct_pred/total_pred}")
-    # print normalized loss
     print(f"Evaluation loss normalized: {total_loss/len(eval_data_loader)}")
     print("---------------------------")        
             
