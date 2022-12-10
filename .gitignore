@@ -1,11 +1,15 @@
+*.DS_Store
+.vscode
+logs/
 # Byte-compiled / optimized / DLL files
-__pycache__/
+*/__pycache__/*
 src/__pycache__/
 *.py[cod]
 *$py.class
 
 # C extensions
 *.so
+*pyc
 
 # Distribution / packaging
 .Python
@@ -131,6 +135,9 @@ dmypy.json
 
 valid_data/
 coughvid/
+balanced_segmented_data/
+balanced_segmented_data.zip
+
 *.pth
 *.csv
 

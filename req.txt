@@ -4,6 +4,8 @@
 #
 #    pip-compile req.in
 #
+absl-py==1.3.0
+    # via tensorboard
 aiohttp==3.8.3
     # via
     #   datasets
@@ -33,6 +35,8 @@ attrs==22.1.0
     # via
     #   aiohttp
     #   jsonschema
+audiomentations==0.27.0
+    # via -r req.in
 audioread==3.0.0
     # via librosa
 backcall==0.2.0
@@ -43,6 +47,8 @@ black==22.10.0
     # via -r req.in
 bleach==5.0.1
     # via nbconvert
+cachetools==5.2.0
+    # via google-auth
 certifi==2022.9.24
     # via requests
 cffi==1.15.1
@@ -55,8 +61,12 @@ charset-normalizer==2.1.1
     #   requests
 click==8.1.3
     # via black
+contourpy==1.0.6
+    # via matplotlib
 cramjam==2.6.2
     # via fastparquet
+cycler==0.11.0
+    # via matplotlib
 datasets==2.7.1
     # via -r req.in
 debugpy==1.6.4
@@ -81,6 +91,8 @@ fastparquet==2022.11.0
     # via -r req.in
 filelock==3.8.0
     # via huggingface-hub
+fonttools==4.38.0
+    # via matplotlib
 frozenlist==1.3.3
     # via
     #   aiohttp
@@ -89,6 +101,14 @@ fsspec[http]==2022.11.0
     # via
     #   datasets
     #   fastparquet
+google-auth==2.15.0
+    # via
+    #   google-auth-oauthlib
+    #   tensorboard
+google-auth-oauthlib==0.4.6
+    # via tensorboard
+grpcio==1.51.1
+    # via tensorboard
 huggingface-hub==0.11.1
     # via datasets
 idna==3.4
@@ -163,16 +183,24 @@ jupyterlab-pygments==0.2.2
     # via nbconvert
 jupyterlab-widgets==3.0.3
     # via ipywidgets
+kiwisolver==1.4.4
+    # via matplotlib
 librosa==0.9.2
     # via
     #   -r req.in
+    #   audiomentations
     #   torch-audiomentations
 llvmlite==0.39.1
     # via numba
+markdown==3.4.1
+    # via tensorboard
 markupsafe==2.1.1
     # via
     #   jinja2
     #   nbconvert
+    #   werkzeug
+matplotlib==3.6.2
+    # via -r req.in
 matplotlib-inline==0.1.6
     # via
     #   ipykernel
@@ -222,15 +250,22 @@ numba==0.56.4
 numpy==1.23.5
     # via
     #   -r req.in
+    #   audiomentations
+    #   contourpy
     #   datasets
     #   fastparquet
     #   librosa
+    #   matplotlib
     #   numba
     #   pandas
     #   pyarrow
     #   resampy
     #   scikit-learn
     #   scipy
+    #   tensorboard
+    #   torchvision
+oauthlib==3.2.2
+    # via requests-oauthlib
 packaging==21.3
     # via
     #   datasets
@@ -239,6 +274,7 @@ packaging==21.3
     #   ipykernel
     #   jupyter-server
     #   librosa
+    #   matplotlib
     #   nbconvert
     #   pooch
     #   qtpy
@@ -258,6 +294,10 @@ pexpect==4.8.0
     # via ipython
 pickleshare==0.7.5
     # via ipython
+pillow==9.3.0
+    # via
+    #   matplotlib
+    #   torchvision
 platformdirs==2.5.4
     # via
     #   black
@@ -275,6 +315,8 @@ prompt-toolkit==3.0.33
     # via
     #   ipython
     #   jupyter-console
+protobuf==3.20.3
+    # via tensorboard
 psutil==5.9.4
     # via ipykernel
 ptyprocess==0.7.0
@@ -287,6 +329,12 @@ pyarrow==10.0.1
     # via
     #   -r req.in
     #   datasets
+pyasn1==0.4.8
+    # via
+    #   pyasn1-modules
+    #   rsa
+pyasn1-modules==0.2.8
+    # via google-auth
 pycparser==2.21
     # via cffi
 pygments==2.13.0
@@ -296,12 +344,15 @@ pygments==2.13.0
     #   nbconvert
     #   qtconsole
 pyparsing==3.0.9
-    # via packaging
+    # via
+    #   matplotlib
+    #   packaging
 pyrsistent==0.19.2
     # via jsonschema
 python-dateutil==2.8.2
     # via
     #   jupyter-client
+    #   matplotlib
     #   pandas
 pytz==2022.6
     # via pandas
@@ -327,15 +378,23 @@ requests==2.28.1
     #   fsspec
     #   huggingface-hub
     #   pooch
+    #   requests-oauthlib
     #   responses
+    #   tensorboard
+    #   torchvision
+requests-oauthlib==1.3.1
+    # via google-auth-oauthlib
 resampy==0.4.2
     # via librosa
 responses==0.18.0
     # via datasets
+rsa==4.9
+    # via google-auth
 scikit-learn==1.1.3
     # via librosa
 scipy==1.9.3
     # via
+    #   audiomentations
     #   librosa
     #   scikit-learn
 send2trash==1.8.0
@@ -347,6 +406,7 @@ six==1.16.0
     # via
     #   asttokens
     #   bleach
+    #   google-auth
     #   python-dateutil
 sniffio==1.3.0
     # via anyio
@@ -356,6 +416,12 @@ soupsieve==2.3.2.post1
     # via beautifulsoup4
 stack-data==0.6.2
     # via ipython
+tensorboard==2.11.0
+    # via -r req.in
+tensorboard-data-server==0.6.1
+    # via tensorboard
+tensorboard-plugin-wit==1.8.1
+    # via tensorboard
 terminado==0.17.0
     # via
     #   jupyter-server
@@ -374,6 +440,7 @@ torch==1.13.0
     #   torch-audiomentations
     #   torch-pitch-shift
     #   torchaudio
+    #   torchvision
 torch-audiomentations==0.11.0
     # via -r req.in
 torch-pitch-shift==1.2.2
@@ -383,6 +450,8 @@ torchaudio==0.13.0
     #   -r req.in
     #   torch-audiomentations
     #   torch-pitch-shift
+torchvision==0.14.0
+    # via -r req.in
 tornado==6.2
     # via
     #   ipykernel
@@ -414,6 +483,7 @@ typing-extensions==4.4.0
     # via
     #   huggingface-hub
     #   torch
+    #   torchvision
 urllib3==1.26.13
     # via
     #   requests
@@ -426,6 +496,10 @@ webencodings==0.5.1
     #   tinycss2
 websocket-client==1.4.2
     # via jupyter-server
+werkzeug==2.2.2
+    # via tensorboard
+wheel==0.38.4
+    # via tensorboard
 widgetsnbextension==4.0.3
     # via ipywidgets
 xxhash==3.1.0

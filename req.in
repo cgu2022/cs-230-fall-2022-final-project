@@ -10,3 +10,8 @@ torch-audiomentations
 ipykernel
 black
 numpy
+matplotlib
+audiomentations
+tensorboard
+matplotlib
+torchvision
