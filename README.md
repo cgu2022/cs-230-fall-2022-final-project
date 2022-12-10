@@ -13,10 +13,7 @@ Model_exp
 
 ## How to use
 
-`
 main.py --train_file='path/train.parquet' \
         --val_file='path/val.parquet' \
         --test_file='path/test.parquet' \
         --audio_dir='path_to_wav_files' \
-
-`
